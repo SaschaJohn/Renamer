@@ -31,3 +31,6 @@ jobs:
     
     - name: Build
       run: dotnet build -c Release --no-restore
+
+    - name: Run ls
+      run: ls -alR
