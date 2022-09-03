@@ -32,15 +32,12 @@ jobs:
     - name: Build
       run: dotnet build -c Release --no-restore
 
-    - name: Run ls
-      run: ls -alR
-
     - uses: vimtor/action-zip@v1
       with:
-        files: Renamer/bin/Release/net6.0-windows
+        files: Renamer\bin\Release\net6.0-windows
         dest: Renamer.zip
 
     - uses: actions/upload-artifact@v1
       with:
         name: renamer
-        path: ${{ github.workspace }}/Renamer.zip
+        path: ${{ github.workspace }}\Renamer.zip
