@@ -36,6 +36,12 @@ jobs:
       with:
         files: Renamer\bin\Release\net6.0-windows
         dest: Renamer.zip
+    
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: ${{ github.ref }}
+        files: Renamer.zip
 
     - uses: actions/upload-artifact@v1
       with:
